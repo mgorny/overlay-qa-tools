@@ -1,0 +1,24 @@
+Gentoo overlay '${1}' has non-matching repo_name
+
+Hello,
+
+Our semi-automated QA tools have detected that the Gentoo overlay listed as '${1}' specifies a different repository name in the repo_name file: '${2}'.
+
+With modern versions of Portage package manager, it is important for repositories to use consistent names in the repository list (which is used to create repos.conf before installing the repository) and the repository itself. Right now failure to do so results in verbose warnings, while in future it may result in major issues with Portage behavior and become banned.
+
+Please either:
+
+a. modify the repo_name file to state '${1}' as the repository name,
+
+b. let us know that we ought to change the layman repository name to '${2}'.
+
+If you decide to change the repository name in the future, please contact us to have the repositories.xml entry updated accordingly.
+
+If we do not receive any reply in 7 days and the issue remains unfixed, we will be forced to change the layman entry (option b.).
+
+
+You are receiving this mail because you are listed as owner of the Gentoo overlay '${1}'. If this is incorrect, please let us know and we will update the owner or remove the overlay appropriately.
+
+--
+On behalf of Gentoo Overlays team,
+${fullname}

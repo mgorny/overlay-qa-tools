@@ -1,0 +1,20 @@
+# Config file for QA scripts
+# (copy to qatools.conf and edit)
+
+[user]
+# Your real name. If unset, will get it from GECOS
+#fullname =
+# Your e-mail address. If unset, will use username@smtp_host
+#email =
+
+[smtp]
+# SMTP host (or host:port). If unset, defaults to localhost
+host = dev.gentoo.org
+# Enable SSL
+ssl = 1
+# Enable STARTTLS
+#tls = 1
+# SMTP username. If unset, auth will be disabled
+username =
+# SMTP password. If unset, auth will be disabled
+password =
