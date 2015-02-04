@@ -1,3 +1,5 @@
+# (c) 2015 Michał Górny, 2-clause BSD licensed
+
 jobs = 6
 repos = $(shell portageq get_repos /)
 output_files = $(patsubst %,%.txt,$(repos))

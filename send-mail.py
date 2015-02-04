@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# (c) 2015 Michał Górny, 2-clause BSD licensed
 
 import email.charset
 import email.message
