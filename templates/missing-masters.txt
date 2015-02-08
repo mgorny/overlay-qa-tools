@@ -1,0 +1,27 @@
+Gentoo overlay '${1}' lacks masters specification
+
+Hello,
+
+Our semi-automated QA tools have detected that the Gentoo overlay listed as '${1}' does not specify a master repository in metadata/layout.conf file.
+
+The modern repository layout no longer forces all overlays to rely on the Gentoo repository. Instead, each repository needs to explicitly specify all other repositories it relies on. Lack of this information results in a warning in current versions of Portage, and may result in ebuilds being unable to find eclasses and other important files provided by the Gentoo repository.
+
+
+If your ebuilds rely on any files being provided by the Gentoo repository, please add the following line to metadata/layout.conf file in your repository (creating it if necessary):
+
+  masters = gentoo
+
+If your repository is stand-alone and does not require any packages, eclasses or licenses provided by the Gentoo repository, use the following specification instead:
+
+  masters =
+
+For more information, please read portage(5) man, layout.conf section.
+
+If you do not update the repository in 7 days, it will be removed from the repository list used by layman. It can be re-added afterwards on request if the issue is fixed.
+
+
+You are receiving this mail because you are listed as owner of the Gentoo overlay '${1}'. If this is incorrect, please let us know and we will update the owner or remove the overlay appropriately.
+
+--
+On behalf of Gentoo Overlays team,
+${fullname}
