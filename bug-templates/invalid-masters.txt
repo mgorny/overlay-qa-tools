@@ -1,0 +1,21 @@
+[${1}] Unavailable masters = ${2} referenced
+
+The Gentoo overlay listed as '${1}' specifies a master repository that is not listed on the official repository list:
+
+  masters = ${2}
+
+This means that when a Gentoo user adds this repository to his system, he will soon start seeing errors that the Package Manager can't find a master repository. Depending on the Package Manager in use, this may even make it impossible to use Package Manager at all.
+
+Worse than that, since the master repository is not available on the remote repository list, the user will have no clear way of fixing the issue other than removing the offending repository.
+
+
+Therefore, please either:
+
+1. file a request to add the masters (${2}) to the official repository list, providing all the necessary details;
+
+2. ensure that your repository can work without the offending masters and remove them from metadata/layout.conf;
+
+3. or let us know that the repository can't work through regular install procedure (layman) and we should remove it.
+
+
+We already sent first e-mail about the issue on 2015-05-14. Therefore, if we receive no reply within the next 7 days (until 2015-06-11), we will be removing the repository. Once that happens, we can re-add it once the issue is fixed.
