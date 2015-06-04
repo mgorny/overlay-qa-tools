@@ -78,7 +78,9 @@ def main(data_file, template_file):
 					repo_name = l[0]
 					print('%s' % repo_name)
 					repo = repos_xml.find('./repo[name="%s"]' % repo_name)
-					assert(repo)
+					if not repo:
+						print('!! repo %s does not exist!' % repo_name)
+						continue
 
 					mail_to = []
 					for o in repo.findall('owner'):
