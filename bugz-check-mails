@@ -1,0 +1,23 @@
+#!/bin/bash
+
+failed=()
+for email; do
+	printf "%-40s" "${email}"
+	error=$(bugz post --product 'Gentoo Linux' --component 'Applications' -t 'test, please ignore' -d test --batch -a "${email}" --cc nonexistent@example.com |& grep xmlrpc.client.Fault)
+
+	# if it fails because of assignee address, it's invalid
+	# otherwise, it will fail because of cc address
+	if [[ ${error} == *nonexistent* ]]; then
+		printf "%b" "\033[32m[ ok ]\033[0m\n"
+	else
+		printf "%b" "\033[31m[fail]\033[0m\n"
+		failed+=( "${email}" )
+	fi
+done
+
+if [[ ${failed[@]} ]]; then
+	echo "The non-registered e-mail addresses are:"
+	echo "${failed[*]}"
+else
+	echo "All e-mail addresses seem to be registered."
+fi

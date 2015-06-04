@@ -1,0 +1,12 @@
+#!/bin/bash
+
+#[[ -f repositories.xml ]] && rm repositories.xml
+#wget https://api.gentoo.org/overlays/repositories.xml
+
+for email; do
+	nodes=$(xmllint --xpath "//repo[owner/email/text()=\"${email}\"]/name" repositories.xml 2>/dev/null)
+
+	nodes=${nodes//<\/name>/$'\n'}
+	nodes=( ${nodes//<name>/} )
+	echo ${email} \"${nodes[*]}\"
+done

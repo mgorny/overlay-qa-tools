@@ -1,0 +1,17 @@
+Gentoo overlay contact address is not registered on bugs.g.o
+
+Hello,
+
+Our semi-automated QA tools have detected that this e-mail address '${1}' which is used as a contact address for one or more Gentoo repositories is not registered with Gentoo Bugzilla.
+
+Most of the future communications regarding your repository, including bug reports, will be done through the Gentoo Bugzilla at bugs.gentoo.org. If you don't have an account there, please register one. Otherwise, please open a bug asking us to update your contact e-mail address to the address used on Bugzilla.
+
+
+If the repository does not have a Bugzilla-registered contact address in 14 days, it may be removed from the official Gentoo repository list. It can be quickly re-added afterwards on request once the issue is fixed.
+
+
+You are receiving this mail because you are listed as owner of the Gentoo overlay(s) ${2}. If this is incorrect, please let us know and we will update the owner or remove the overlay appropriately.
+
+--
+On behalf of Gentoo Overlays team,
+${fullname}

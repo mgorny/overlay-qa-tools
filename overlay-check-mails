@@ -1,0 +1,10 @@
+#!/bin/bash
+
+[[ -f repositories.xml ]] && rm repositories.xml
+wget https://api.gentoo.org/overlays/repositories.xml
+nodes=$(xmllint --xpath '//email' repositories.xml)
+
+nodes=${nodes//<\/email>/$'\n'}
+nodes=${nodes//<email>/}
+
+./bugz-check-mails $(echo "${nodes}" | sort -u)
